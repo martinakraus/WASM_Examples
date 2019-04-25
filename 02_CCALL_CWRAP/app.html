@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script type="text/javascript" src="app.js"></script>
+<script>
+    Module.onRuntimeInitialized = _ => {
+        const fiboFn = Module.cwrap('fibonacci', 'number', ['number']);
+
+        console.log(fiboFn(11));
+    }
+</script>
+</body>
+</html>
