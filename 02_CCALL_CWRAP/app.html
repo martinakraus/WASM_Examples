@@ -6,10 +6,9 @@
 <body>
 <script type="text/javascript" src="app.js"></script>
 <script>
-    Module.onRuntimeInitialized = _ => {
-        const fiboFn = Module.cwrap('fibonacci', 'number', ['number']);
-
-        console.log(fiboFn(11));
+    Module.onRuntimeInitialized = () => {
+        const fibo = Module.cwrap('fibonacci', 'number', ['number']);
+        console.log(fibo(5));
     }
 </script>
 </body>
